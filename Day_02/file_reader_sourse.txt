@@ -1,0 +1,4 @@
+Let's then look at how to read files in Python.
+I've just created a simple text file which consists of four lines.
+I'm first going to create a variable file name, which
+contains the name of my input file. -"END".

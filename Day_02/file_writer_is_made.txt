@@ -1,0 +1,3 @@
+Python has two enviroments.They are 
+ 1.Jupyter
+ 2.Spyder.
