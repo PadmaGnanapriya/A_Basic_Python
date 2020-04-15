@@ -1,29 +1,13 @@
-# from bs4 import BeautifulSoup
-# import requests
-#
-# # search = input("Search for : ")
-# # params ={"q",search}
-# r = requests.get("https://www.nlb.lk/results/govisetha")
-#
-# soup = BeautifulSoup(r.text, "html.parser")
-# results = soup.find_all('tr')
-# print(results[7:11])
-from _csv import writer
-
 import requests
 from bs4 import BeautifulSoup
-import csv
+import pandas as pd
 
-def append_list_as_row(file_name, list_of_elem):
-    # Open file in append mode
-    with open(file_name, 'a+', newline='') as write_obj:
-        # Create a writer object from csv module
-        csv_writer = writer(write_obj)
-        # Add contents of list as last row in the csv file
-        csv_writer.writerow(list_of_elem)
+search = input("Search for : ")
+params ={"q", search}
+r = requests.get("https://www.nlb.lk/results/"+search)
 
 
-r = requests.get("https://www.nlb.lk/results/govisetha")
+#r = requests.get("https://www.nlb.lk/results/govisetha")
 
 soup = BeautifulSoup(r.text, "html.parser")
 table = soup.find("table")
@@ -31,25 +15,33 @@ file = open("copy.txt", "w")
 output_rows = []
 for table_row in table.findAll('tr'):
     columns = table_row.findAll('td')
+    num_set=table_row.findAll("li", {"class": "Number-2"})
     string_col=str(columns)
     row_contents = [string_col]
+    loto_num = BeautifulSoup(str(num_set), "html.parser").get_text()
+    loto_index=str(row_contents)[int(str(row_contents).find('<b>'))+3:int(str(row_contents).find('</b>'))]
+    loto_date=str(row_contents)[int(str(row_contents).find('<br/>'))+5:int(str(row_contents).find('</td>'))]
+    # print(loto_date)
+    # print(loto_index)
+    # print(loto_num)
+    f = open('helloworld.txt', 'a+')
+    kk=''
+    if len(loto_num)>9:
+        kk=loto_index+', '+loto_num[1:-1]+', \''+loto_date[:-6]+'\','+loto_date[-5:]
+        f = open('helloworld.txt', 'a+')
+        if len(kk)>2:
+            if kk not in f:
+                f.write(kk)
+                f.write('\n')
+    print(kk)
+    f.close()
 
-    # Append a list as new line to an old csv file
-    append_list_as_row('output.csv', row_contents)
 
-   # print(table_row.findAll('b'))
-   # print(table_row.findAll('li'))
-   #  file.write(columns)
-    # c = csv.writer(open('dbdump01.csv', 'wb'))
-    # for x in result:
-    #     c.writerow(x)
+read_file = pd.read_csv(r'helloworld.txt')
+read_file.to_csv(r'outputs.csv', index=None)
 
-    output_row = []
-    for column in columns:
-        output_row.append(column.text)
-    output_rows.append(output_row)
-   #print(output_rows)
 
-# with open('output.csv', 'wb') as csvfile:
-#     writer = csv.writer(csvfile)
-#     writer.writerows(output_rows)
+
+
+
+
