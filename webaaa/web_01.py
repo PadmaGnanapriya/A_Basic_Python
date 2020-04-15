@@ -21,13 +21,11 @@ for table_row in table.findAll('tr'):
     loto_num = BeautifulSoup(str(num_set), "html.parser").get_text()
     loto_index=str(row_contents)[int(str(row_contents).find('<b>'))+3:int(str(row_contents).find('</b>'))]
     loto_date=str(row_contents)[int(str(row_contents).find('<br/>'))+5:int(str(row_contents).find('</td>'))]
-    # print(loto_date)
-    # print(loto_index)
-    # print(loto_num)
+    loto_letr=str(row_contents)[int(str(row_contents).find('Letter">'))+8:int(str(row_contents).find('Letter">'))+9]
     f = open('helloworld.txt', 'a+')
     kk=''
     if len(loto_num)>9:
-        kk=loto_index+', '+loto_num[1:-1]+', \''+loto_date[:-6]+'\','+loto_date[-5:]
+        kk=loto_index+', \''+loto_letr+'\', '+loto_num[1:-1]+', \''+loto_date[:-6]+'\','+loto_date[-5:]
         f = open('helloworld.txt', 'a+')
         if len(kk)>2:
             if kk not in f:
