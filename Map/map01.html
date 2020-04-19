@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5ebb2ec1764f4c22b4502ed26dbc290f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_5ebb2ec1764f4c22b4502ed26dbc290f" ></div>
+        
+</body>
+<script>    
+    
+            var map_5ebb2ec1764f4c22b4502ed26dbc290f = L.map(
+                "map_5ebb2ec1764f4c22b4502ed26dbc290f",
+                {
+                    center: [7.8731, 80.7718],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 8,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6fd5edb30848496c8633d52d591ccd0e = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_5ebb2ec1764f4c22b4502ed26dbc290f);
+        
+    
+            var marker_9a20d8e37f6046158174266be684be1a = L.marker(
+                [7.8731, 80.7718],
+                {}
+            ).addTo(map_5ebb2ec1764f4c22b4502ed26dbc290f);
+        
+    
+        var popup_8cd3a92b1074477a846edda9bf38018f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_af9e5fd0e3d54940bd0ad4ac114465a3 = $(`<div id="html_af9e5fd0e3d54940bd0ad4ac114465a3" style="width: 100.0%; height: 100.0%;"><strong>Center point</strong></div>`)[0];
+            popup_8cd3a92b1074477a846edda9bf38018f.setContent(html_af9e5fd0e3d54940bd0ad4ac114465a3);
+        
+
+        marker_9a20d8e37f6046158174266be684be1a.bindPopup(popup_8cd3a92b1074477a846edda9bf38018f)
+        ;
+
+        
+    
+    
+            marker_9a20d8e37f6046158174266be684be1a.bindTooltip(
+                `<div>
+                     Click for more info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a61226e691494734ba28bd90da880d26 = L.marker(
+                [6.0495233, 80.2522632],
+                {}
+            ).addTo(map_5ebb2ec1764f4c22b4502ed26dbc290f);
+        
+    
+            var icon_4bd4114626d049c4973774d5bc3bd661 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_a61226e691494734ba28bd90da880d26.setIcon(icon_4bd4114626d049c4973774d5bc3bd661);
+        
+    
+        var popup_3239ff68c12943a6a47edecb7d396169 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d7dcde0ac4c44453ba7e0da61f7aab3a = $(`<div id="html_d7dcde0ac4c44453ba7e0da61f7aab3a" style="width: 100.0%; height: 100.0%;">Hi, This is Anjana's place</div>`)[0];
+            popup_3239ff68c12943a6a47edecb7d396169.setContent(html_d7dcde0ac4c44453ba7e0da61f7aab3a);
+        
+
+        marker_a61226e691494734ba28bd90da880d26.bindPopup(popup_3239ff68c12943a6a47edecb7d396169)
+        ;
+
+        
+    
+    
+            var circle_marker_42ce0410791a4478a0e4a3d44bcada65 = L.circleMarker(
+                [7.023589899, 79.963741399],
+                {"bubblingMouseEvents": true, "color": "#428bca", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 50, "stroke": true, "weight": 3}
+            ).addTo(map_5ebb2ec1764f4c22b4502ed26dbc290f);
+        
+    
+        var popup_1553ec3ed1ca427b9acaf07e1fc5b141 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0d41259e28e347e0a8beff5392f839c3 = $(`<div id="html_0d41259e28e347e0a8beff5392f839c3" style="width: 100.0%; height: 100.0%;">Pasindu area</div>`)[0];
+            popup_1553ec3ed1ca427b9acaf07e1fc5b141.setContent(html_0d41259e28e347e0a8beff5392f839c3);
+        
+
+        circle_marker_42ce0410791a4478a0e4a3d44bcada65.bindPopup(popup_1553ec3ed1ca427b9acaf07e1fc5b141)
+        ;
+
+        
+    
+</script>
